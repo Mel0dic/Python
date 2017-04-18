@@ -14,4 +14,17 @@ def make(height):
 
         print("\n")
 
-make(int(input("Enter The Height Of The Pyramid: ")))
+def start():
+
+    condition = False
+
+    while condition == False:
+        try:
+            make(int(input("Enter The Height Of The Pyramid: ")))
+            condition = True
+            break
+        except:
+            print("Error")
+
+
+start()
