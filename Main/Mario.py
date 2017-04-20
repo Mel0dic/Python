@@ -7,7 +7,7 @@ def make(height):
         for l in range(0, height - i + 1):
             print("#", end='')
 
-        print(" ", end='')
+        print("  ", end='')
 
         for a in range(0, height - i + 1):
             print("#", end='')
@@ -24,7 +24,7 @@ def start():
             condition = True
             break
         except:
-            print("Error")
+            print("\nError")
 
 
 start()
