@@ -12,7 +12,7 @@ def make(height):
         for a in range(0, height - i + 1):
             print("#", end='')
 
-        print("\n")
+        print("\n", end='')
 
 def start():
 
