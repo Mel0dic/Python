@@ -20,11 +20,13 @@ def start():
 
     while condition == False:
         try:
-            make(int(input("Enter The Height Of The Pyramid: ")))
-            condition = True
-            break
+            Height = int(input("Enter The Height Of The Pyramid: "))
+            if Height > 0 & Height <= 100:
+                condition = True
+                break
         except:
             print("\nError")
 
+    make(Height)
 
 start()
