@@ -78,7 +78,7 @@ def main():
         grid = randomGrid(N)
     # set up the animation
     fig, ax = plt.subplots()
-    img = ax.imshow(grid, interpolation='nearest')
+    img = ax.imshow(grid, interpolation='kaiser')
     ani = animation.FuncAnimation(fig, update, fargs=(img, grid, N, ),
                                 frames=10,
                                 interval=updateInterval,
