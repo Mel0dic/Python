@@ -25,16 +25,18 @@ def search(s, c, n):
     return
 
 array = []
-count = 0
+arrayls = []
 
 def words(word, let):
-    global count
+    global arrayls
+    count = 0
     print("Found")
     count += 1
+    arrayls.append(let)
     for letter in word:
         printed = False
-        for i in array:
-            if let.lower() == letter.lower():
+        for i in arrayls:
+            if letter.lower() == i.lower():
                 print(letter, end='')
                 printed = True
                 break
@@ -47,14 +49,14 @@ def main():
     sorte = sort(word, len(word))
     for s in range(0, len(word)):
         array.append(word[s].lower())
-    let = input("Input the char: ")
-    if search(let.lower(), sorte, len(word)) == True:
-        words(word, let)
-    else:
-        wrong+=1
-        if wrong == 3:
-            print("Out of guesses")
-            print("The word was %s" %(word))
-            return 0
-
+    for i in range(0,10):
+        let = input("\nInput the char: ")
+        if search(let.lower(), sorte, len(word)) == True:
+            words(word, let)
+        else:
+            wrong+=1
+            if wrong == 3:
+                print("Out of guesses")
+                print("The word was %s" %(word))
+                return 0
 main()
