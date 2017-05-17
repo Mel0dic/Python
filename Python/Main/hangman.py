@@ -66,4 +66,6 @@ def main():
                 return 0
     if finished == True:
         print("\nCongratulation the word was %s" %(word))
-main()
+
+if __name__ == "__main__":
+    main()
