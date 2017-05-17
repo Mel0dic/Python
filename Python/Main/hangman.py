@@ -24,18 +24,32 @@ def search(s, c, n):
         n = max - min + 1;
     return
 
+array = []
+count = 0
+
+def words(word, let):
+    global count
+    print("Found")
+    count += 1
+    for letter in word:
+        printed = False
+        for i in array:
+            if let.lower() == letter.lower():
+                print(letter, end='')
+                printed = True
+                break
+        if printed == False:
+            print("_", end = '')
+
 def main():
+    wrong = 0
     word = input("Please input a word for: ")
     sorte = sort(word, len(word))
-    wrong = 0
+    for s in range(0, len(word)):
+        array.append(word[s].lower())
     let = input("Input the char: ")
-    if search(let, sorte, len(word)) == True:
-        print("Found")
-        for letter in word:
-            if letter.lower() == let.lower():
-                print(letter, end='')
-            else:
-                print("_", end='')
+    if search(let.lower(), sorte, len(word)) == True:
+        words(word, let)
     else:
         wrong+=1
         if wrong == 3:
