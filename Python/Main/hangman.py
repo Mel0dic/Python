@@ -26,9 +26,12 @@ def search(s, c, n):
 
 array = []
 arrayls = []
+finished = False
 
 def words(word, let):
     global arrayls
+    global finished
+    finished = True
     count = 0
     print("Found")
     count += 1
@@ -42,14 +45,16 @@ def words(word, let):
                 break
         if printed == False:
             print("_", end = '')
+            finished = False
 
 def main():
+    global finished
     wrong = 0
     word = input("Please input a word for: ")
     sorte = sort(word, len(word))
     for s in range(0, len(word)):
         array.append(word[s].lower())
-    for i in range(0,10):
+    while finished == False:
         let = input("\nInput the char: ")
         if search(let.lower(), sorte, len(word)) == True:
             words(word, let)
@@ -59,4 +64,6 @@ def main():
                 print("Out of guesses")
                 print("The word was %s" %(word))
                 return 0
+    if finished == True:
+        print("\nCongratulation the word was %s" %(word))
 main()
