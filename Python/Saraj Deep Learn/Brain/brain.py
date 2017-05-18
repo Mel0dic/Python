@@ -3,9 +3,9 @@ from sklearn import linear_model
 import matplotlib.pyplot as plt
 
 #read data
-dataframe = pd.read_fwf('/home/ben/Documents/Code/Python/Python/Saraj Deep Learn/Brain/brain_body.txt')
-x_values = dataframe[['Brain']]
-y_values = dataframe[['Body']]
+dataframe = pd.read_csv('/home/ben/Documents/Code/Python/Python/Saraj Deep Learn/Brain/challenge_dataset.txt', header=None)
+x_values = dataframe[[0]]
+y_values = dataframe[[1]]
 
 #train model on data
 body_reg = linear_model.LinearRegression()
