@@ -1,4 +1,5 @@
 from random import randint
+from turtle import *
 
 def generate():
     something = []
@@ -57,10 +58,12 @@ def words(word, let):
             print("_", end = '')
             finished = False
 
+
 def main():
     global finished
     wrong = 0
     word = generate()
+    print(word)
     for i in range(0, len(word)):
         print('_', end='')
     sorte = sort(word, len(word))
@@ -72,6 +75,7 @@ def main():
             words(word, let)
         else:
             wrong+=1
+            hang()
             if wrong == 3:
                 print("Out of guesses")
                 print("The word was %s" %(word))
