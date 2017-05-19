@@ -19,7 +19,6 @@ dataframe.loc[:, ('y2')] = dataframe['y1'] == 0
 #Turn true or false values to 1 or 0
 dataframe.loc[:, ('y2')] = dataframe['y2'].astype(int)
 
-
 #Step 3 - prepare data for tensorflow (tensors)
 #tensors are a generic version of vectors and matrices
 #Vector - is a list of number (1D tensor)

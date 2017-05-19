@@ -75,7 +75,6 @@ def main():
             words(word, let)
         else:
             wrong+=1
-            hang()
             if wrong == 3:
                 print("Out of guesses")
                 print("The word was %s" %(word))
