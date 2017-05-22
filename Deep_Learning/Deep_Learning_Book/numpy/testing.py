@@ -89,3 +89,99 @@ def my_function(z, y, x):
 	return x * y + z
 #print(np.fromfunction(my_function, (3, 2, 10)))
 
+#NumPy's ndarrays are also efficient in part because all their 
+#elements must have the same type (usually numbers). You can check 
+#what the data type is by looking at the dtype attribute:
+
+c = np.arange(1, 5)
+print(c.dtype, c)
+
+c = np.arange(1.0, 5.0)
+print(c.dtype, c)
+
+#Instead of letting NumPy guess what data type to use, you can set it
+#explicitly when creating an array by setting the dtype parameter:
+d = np.arange(1, 5, dtype=np.complex64)
+print(d.dtype, d)
+
+
+#The itemsize attribute returns the size (in bytes) of each item
+e = np.arange(1, 5, dtype=np.complex64)
+print(e.itemsize)
+
+#An array's dat is stored as a flat (one dimensional) byte buffer.
+#It is available via the data attribute (you will rarely need it
+#though)
+f = np.array([[1,2], [1000, 2000]], dtype=np.int32)
+print(f.data)
+
+#In python 2, f.data is a buffer. In python 3, it is a memoryview.
+if (hasattr(f.data, "tobytes")):
+    data_bytes = f.data.tobytes() # python 3
+else:
+    data_bytes = memoryview(f.data).tobytes() # python 2
+
+print(data_bytes)
+
+#Several ndarrays can share the same data buffer, meaning that 
+#modifying one will also modify the others. We will see an example
+#in a minute.
+
+#RESHAPING AN ARRAY
+
+#changing an array of an ndarray is as simple as setting its shape
+#attribute. However, the array's size must remain the same.
+
+print('\n\n\n')
+
+g = np.arange(24)
+print(g)
+print("Rank:", g.ndim)
+
+g.shape = (6, 4)
+print(g)
+print("Rank:", g.ndim)
+
+g.shape = (2, 3, 4)
+print(g)
+print("Rank:", g.ndim)
+
+
+#RESHAPE
+
+#The reshape function returns a new ndarray object pointing 
+#at the same data. This means that modifying one array will 
+#also modify the other.
+
+print("\n\n\n")
+g2 = g.reshape(4,6)
+print(g2)
+print("Rank:", g2.ndim)
+
+#Set item at row 1, col 2 to 999 (more about indexing below).
+g2[1, 2] = 999
+print(g2)
+
+#This modifies the corresponding element in g
+print(g)
+
+#Finally, the ravel function returns a new one-dimensional ndarray
+#that also points to the same data
+print(g.ravel()) 
+
+
+#ARITHMETIC OPERATIONS
+
+#All the usual arithmetic operators (+, -, *, /, //, **, etc.) 
+#can be used with ndarrays. They apply elementwise:
+a = np.array([14, 23, 32, 41])
+b = np.array([5,  4,  3,  2])
+print("a + b  =", a + b)
+print("a - b  =", a - b)
+print("a * b  =", a * b)
+print("a / b  =", a / b)
+print("a // b  =", a // b)
+print("a % b  =", a % b)
+print("a ** b =", a ** b)
+
+#Broadcasting
