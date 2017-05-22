@@ -34,7 +34,7 @@ def gradient_descent_runner(points, starting_b, starting_m, learning_rate, num_i
 
 def run():
     #delimiter where to break up text
-    points = genfromtxt('/data.csv', delimiter=',')
+    points = genfromtxt('./data.csv', delimiter=',')
     #hyperparameter defines how fast the model learns. Need balance
     learning_rate = 0.0001
     #y = mx + b where b = y intercept and m = slope (slope formula)

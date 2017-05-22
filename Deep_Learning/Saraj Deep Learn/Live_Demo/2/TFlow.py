@@ -5,7 +5,7 @@ import tensorflow as tf #Google tensorflow
 
 #Step 1 - load data
 # Read the data as a dataframe object
-dataframe = pd.read_csv('/home/ben/Documents/Code/Python/Python/Saraj Deep Learn/Live_Demo/2/data.csv')
+dataframe = pd.read_csv('/home/ben/Documents/Python/Saraj Deep Learn/Live_Demo/2/data.csv')
 #Use drop to get rid of unused columns. Only uising the first axis in the data set
 dataframe = dataframe.drop(['index', 'price', 'sq_price'], axis=1)
 #We only want the first 10 rows of the data set
@@ -84,11 +84,11 @@ for i in range(training_epochs):
 	#Write out logs of training
 	if (i) % display_step == 0:
 		cc = sess.run(cost, feed_dict={x: inputX, y_: inputY})
-		#print("Training step:", '%04d' % (i), "cost=", "{:.9f}".format(cc)) #, \"W=", sess.run(W), "b=", sess.run(b)
+		print("Training step:", '%04d' % (i), "cost=", "{:.9f}".format(cc)) #, \"W=", sess.run(W), "b=", sess.run(b)
 
-#print("Optimization Finished!")
-#training_cost = sess.run(cost, feed_dict={x: inputX, y_: inputY})
-#print("Training cost=", training_cost, "W=", sess.run(W), "b=", sess.run(b), '\n')
+print("Optimization Finished!")
+training_cost = sess.run(cost, feed_dict={x: inputX, y_: inputY})
+print("Training cost=", training_cost, "W=", sess.run(W), "b=", sess.run(b), '\n')
 
 #Its saying all houses are a good buy 7/10
 #To improve add a hiden layer
