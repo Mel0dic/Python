@@ -10,8 +10,12 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tp.API(auth, wait_on_rate_limit=True)
 
-something = api.get_status(867002900568002561)
+class MyStreamListener(tp.StreamListener):
+    def on_status(self, status):
+    	if not status.retweeted:
+    		print(status.text)
 
-print('\n\n')
-print(dir(something.author))
-print(something.author.time_zone)
+myStreamListener = MyStreamListener()
+myStream = tp.Stream(auth = api.auth, listener=myStreamListener, retweets=False)
+
+myStream.filter(track=['#GE2017'])
