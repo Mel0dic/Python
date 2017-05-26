@@ -14,7 +14,7 @@ def make(height):
 
         print("\n", end='')
 
-def start():
+def main():
 
     condition = False
 
@@ -29,4 +29,4 @@ def start():
 
     make(Height)
 
-start()
+main()
