@@ -13,22 +13,24 @@ def isupper(char):
 		return False
 
 def caesar(word, num):
-	for i in word:
-		if islower(i):
-			number = ord(i)
+	arr = []
+	for i in range(0, len(word)):
+		arr.append(word[i])
+	for i in range(0, len(arr)):
+		if islower(arr[i]):
+			number = ord(word[i])
 			numb = (((number - 97)+int(num))% 26)+97
-			i = chr(numb)
-		elif isupper(i):
-			number = ord(i)
+			arr[i] = chr(numb)
+		elif isupper(arr[i]):
+			number = ord(word[i])
 			numb = (((number - 65)+int(num))% 26)+65;
-			i = chr(numb)
-	print(word)
+			arr[i] = chr(numb)
+	print(arr)
 	return word
 
 def main(num):
 	sipher = input("Please enter a word or sentence: ")
 	caesar(sipher, num)
-
 
 if len(sys.argv) > 1:
 	main(sys.argv[1])
