@@ -1,5 +1,5 @@
 from random import randint
-from turtle import *
+import turtle
 
 def generate():
     something = []

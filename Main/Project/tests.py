@@ -1,28 +1,19 @@
-#! /usr/bin/python3
-
-import tweepy as tp
-import sys
-sys.path.append('/home/ben/Documents/Sensitive/twitter')
-from twittercodes import *
-
-auth = tp.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-
-api = tp.API(auth, wait_on_rate_limit=True)
-
-# public_tweets = api.home_timeline(include_rts=True, count=10)
-# for tweet in public_tweets:
-#     print(tweet.text)
-
-print(dir(tp.StreamListener))
-
-class listener(tp.StreamListener):
-
-    def on_status(self, data):
-        print(data)
-        return True
-    def on_status(self, status):
-        print(status.text)
-
-twitterStream = tp.Stream(auth, listener()) 
-twitterStream.userstream(_with='user')
+def median(alist):
+    new = []
+    counter = []
+    for i in range(0, 1000):
+        counter.append(0)
+    for i in range(0, len(alist)):
+        counter[alist[i]] += 1
+    for i in range(0, 1000):
+        if counter[i] > 0:
+            for k in range(0, counter[i]):
+                new.append(i)
+    print(new)
+    if (len(new) % 2) == 0:
+        return (float(new[int((len(new)/2)-1)]) + float(new[int((len(new)/2))])) / 2.0
+    else:
+        return new[int(len(new)/2)] 
+    
+alist = [-1, 2, 6, -5, 4, 2, 9]
+print(median(alist))
