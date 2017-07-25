@@ -35,13 +35,19 @@ def booking(times):
 	else:
 		cost = (time - 0.5) * costPerHour + 12
 	if mins >= 0 and mins <= 30:
-		start = str(hour)+":30"
-		end = str(hour+int(time))+":30"
-		print("You are booked from %s to %s and that will cost $%i\n" %(start, end, cost))
+		if time % 1 == 0:
+			start = str(hour)+":30"
+			end = str(hour+int(time))+":" + "30"
+		else:
+			start = str(hour)+":30"
+			end = str(hour+int(time)+1)+":00"
+		print("You are booked from %s to %s and that will cost $%i\n" %(start, \
+			end, cost))
 	if mins > 30 and mins <= 59:
 		start = str(hour + 1)+":00"
 		end = str(hour+int(time)+1)+":00"
-		print("You are booked from %s to %s and that will cost $%i\n" %(start, end, cost))
+		print("You are booked from %s to %s and that will cost $%i\n" %(start, \
+			end, cost))
 
 
 if __name__ == "__main__":
