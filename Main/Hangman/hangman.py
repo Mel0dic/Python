@@ -1,11 +1,46 @@
 from random import randint
 import turtle
 
+def main():
+    #Declare Global Var Finished
+    global finished
+    #Define Local Var Wrong Set Equal To 0
+    wrong = 3
+    #Define Local Var Word Set Equal to return of generate function
+    word = generate()
+    #Debug: Print The Generated Word
+    print(word)
+    for i in range(0, len(word)):
+        print('_', end='')
+    sorte = sort(word, len(word))
+    for s in range(0, len(word)):
+        array.append(word[s].lower())
+    while finished == False:
+        let = input("\nInput the char: ")
+        if search(let.lower(), sorte, len(word)) == True:
+            words(word, let)
+        else:
+            wrong -= 1
+            print("Nope that's not in there. You have %i guesses remaining." %(wrong))
+            if wrong == 0:
+                print("Out of guesses")
+                print("The word was %s" %(word))
+                return 0
+    #Check if word was guessed and print win message
+    if finished == True:
+
+        print("\nCongratulations the word was %s" %(word))
+
 def generate():
+    #Declare Something Array
     something = []
+    #Open Word Txt and cycle through the words
     with open('words.txt') as f:
+        #Add each word to something array  
         something = f.read().splitlines()
+    #Debug: Print Out Length of array
     print(len(something))
+    #Return a random word in the list
     return something[randint(0, len(something))]
 
 
@@ -57,30 +92,6 @@ def words(word, let):
         if printed == False:
             print("_", end = '')
             finished = False
-
-
-def main():
-    global finished
-    wrong = 0
-    word = generate()
-    print(word)
-    for i in range(0, len(word)):
-        print('_', end='')
-    sorte = sort(word, len(word))
-    for s in range(0, len(word)):
-        array.append(word[s].lower())
-    while finished == False:
-        let = input("\nInput the char: ")
-        if search(let.lower(), sorte, len(word)) == True:
-            words(word, let)
-        else:
-            wrong+=1
-            if wrong == 3:
-                print("Out of guesses")
-                print("The word was %s" %(word))
-                return 0
-    if finished == True:
-        print("\nCongratulations the word was %s" %(word))
 
 if __name__ == "__main__":
     main()
