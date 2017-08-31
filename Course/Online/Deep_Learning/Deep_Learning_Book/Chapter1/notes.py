@@ -1,4 +1,4 @@
- """
+"""
 Has it been trained with human supervision
 supervised VS unsupervised VS semisupervised VS reinforcement learning.
 """
