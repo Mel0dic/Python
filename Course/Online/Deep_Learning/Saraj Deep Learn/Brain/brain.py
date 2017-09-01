@@ -3,7 +3,7 @@ from sklearn import linear_model
 import matplotlib.pyplot as plt
 
 #read data
-dataframe = pd.read_csv('/home/ben/Documents/Code/Python/Python/Saraj Deep Learn/Brain/challenge_dataset.txt', header=None)
+dataframe = pd.read_csv('./challenge_dataset.txt', header=None)
 x_values = dataframe[[0]]
 y_values = dataframe[[1]]
 
