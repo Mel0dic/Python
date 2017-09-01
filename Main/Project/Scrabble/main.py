@@ -8,9 +8,8 @@ scores = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2,
 		"x": 8, "z": 10}
 
 def main():
-	#Call list_words() function and set the return to words		
+	#Call list_words() function and set the return to words
 	words = list_words()
-	#words = ["hod", "test", "hello", "hi"]
 	#set rack to the command line input	
 	rack = sys.argv[1]
 	#Call testing function set return to correct

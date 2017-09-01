@@ -1,7 +1,6 @@
-import tweepy
-import sys
-sys.path.append('/home/ben/Documents/Sensitive/twitter')
-from twittercodes import *
+import tweepy, sys
+sys.path.append('../../../../Sensitive')
+from twitter_codes import *
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
