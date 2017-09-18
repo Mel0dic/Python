@@ -12,8 +12,7 @@ def isupper(char):
 	else:
 		return False
 
-def viginere(keyword):
-	ctext = input("Enter the cipher text: ")
+def viginere(keyword, ctext):
 
 
 	counts = count = 0
@@ -43,7 +42,7 @@ def viginere(keyword):
 			print(ctexta[i], end = '')
 		if counts == cline:
 			counts = 0
-	print('\n')
+	print('')
 
 def main():
 	if len(sys.argv) > 1:
@@ -52,5 +51,5 @@ def main():
 		print("Error: python3 viginere.py (key word)")
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
 	main()
