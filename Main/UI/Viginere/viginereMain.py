@@ -1,7 +1,7 @@
-import gi
+import gi, sys
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
-from viginere import *
+from viginere import viginere
 
 class MyWindow(Gtk.ApplicationWindow):
 
@@ -55,8 +55,9 @@ class MyWindow(Gtk.ApplicationWindow):
 		self.keyword = self.entry.get_text()
 
 	def returnWord(self, widget):
-		print(viginere(self.keyword, self.ctext))
-		self.statusbar.push(self.context_id, viginere(self.keyword, self.ctext))
+		ciph = viginere(self.keyword, self.ctext)
+		print(ciph)
+		self.statusbar.push(self.context_id, ciph)
 
 class MyApplication(Gtk.Application):
 	def __init__(self):
