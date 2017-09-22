@@ -2,7 +2,7 @@ import time
 
 numOFboats = 10
 costPerHour = 20
-boatsIn = [True, True, True, True, True, True, True, True, True, True]
+boatsInfo = [[True, 0, 0], True, True, True, True, True, True, True, True, True]
 daysTake = 0
 
 def main():

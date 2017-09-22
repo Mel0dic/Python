@@ -1,0 +1,12 @@
+1.
+	boatInfo = [[available, cost, time, start, end]]
+	dayTake = 0.00
+2.
+	Print "How Long Would You Like To Hire A Boat For?"
+	Get Input
+
+	While input not equal to 30 or 60
+		Print "Only allowed 30 or 60 minute slots"
+		Get Input
+
+	
