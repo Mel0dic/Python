@@ -13,9 +13,12 @@ def Main():
 	hireLength = boatLength()
 
 	#Call function costCalc with value hireLength
-	dayTake += costCalc(hireLength)
+	dayTakeTemp, continueYN = costCalc(hireLength)
 
-	Main()
+	dayTake += dayTakeTemp
+
+	if continueYN == 'y':
+		Main()
 
 #Defin function boatLength to get how long you would like to hire boat for
 def boatLength():
@@ -60,15 +63,15 @@ def costCalc(hireLength):
 			else:
 				print("The boat must be returned by " + str(int((returnTime - 30) / 100) + 1) + ":" + str(int(returnTime % 100)))
 
-	boatHire(returnTime, hireLength)
+	yesOrNo = boatHire(returnTime, hireLength)
 
 	#Check if hire length has half hour slots to calculate cost and add to dayTake
 	if hireLength % 1 == 0:
 		cost = hireLength * costPerHour
-		return cost
+		return cost, yesOrNo
 	else:
 		cost = ((hireLength - 0.5) * costPerHour) + 12
-		return cost
+		return cost, yesOrNo
 
 #Define boatHire to hire out single boat from fleet of 10
 def boatHire(returnTime, hireLength):
@@ -92,10 +95,19 @@ def boatHire(returnTime, hireLength):
 			boat[2] += hireLength
 			toReturn = boat
 			break
-	if reportYN.lower() == 'n':
-		return toReturn
+	if reportYN.lower() == 'y':
+		for boat in range(0, len(boatInfo)):
+			print("Boat {0} was {1}".format(boat + 1, ("not hired" if boatInfo[boat][0] and boatInfo[boat][2] == 0 else "hired")))
 
-	for boat in range(0, len(boatInfo)):
-		print("Boat {0} was {1}".format(boat + 1, ("not hired" if boatInfo[boat][0] and boatInfo[boat][2] == 0 else "hired")))
+	yesOrNo = input("Would you like to hire another boat? (Y/N)")
+
+	while yesOrNo.lower() not in ('y', 'n'):
+		yesOrNo = input("Would you like to hire another boat? (Y/N)")
+		print("Invalid Input")
+
+	if yesOrNo.lower() == 'y':
+		return 'y'
+	else:
+		return 'n'
 
 Main()
