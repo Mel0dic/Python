@@ -1,4 +1,6 @@
-boatInfo = [True]
+boatInfo = [[True, 0], [True, 0], [True, 0], [True, 0], [True, 0], \
+[True, 0], [True, 0], [True, 0], [True, 0], [True, 0],]
+
 costPerHour = 20
 
 def Main():
@@ -49,7 +51,7 @@ def costCalc(hireLength):
 		print("You cannot hire a boat past 17:00")
 		Main()
 	else:
-		print(returnTime)
+		boatHire()
 		if returnTime % 100 == 0:
 			print("The boat must be returned by " + str(int(returnTime / 100)) + ":00")
 		else:
@@ -61,21 +63,25 @@ def costCalc(hireLength):
 	#Check if hire length has half hour slots to calculate cost and add to dayTake
 	if hireLength % 1 == 0:
 		cost = hireLength * costPerHour
-		print(str(hireLength) + " * " + str(costPerHour) + " = " + str(hireLength * costPerHour))
 		return cost
 	else:
 		cost = ((hireLength - 0.5) * costPerHour) + 12
-		print(str(hireLength) + "- 30 * " + str(costPerHour) + " = " + str((hireLength - 30) * costPerHour) + " + 12" + str((hireLength - 30) * costPerHour + 12))
 		return cost
 
 #Define boatHire to hire out single boat from fleet of 10
 def boatHire():
+
+	lowest = 1700
+
 	#Loop throogh boat array for first one available and set it to away
 	for boat in boatInfo:
 		if boat[0] == False:
+			if boat[1] < lowest and boat[1] != 0:
+				lowest = boat[1] 
 			continue
 		else:
 			boat[0] = False
-			break	
+			print(boat)
+			return boat	
 
 Main()

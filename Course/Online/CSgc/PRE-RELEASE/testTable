@@ -1,13 +1,12 @@
 Item Tested | Data Entered | Expected Result | Actual Result | Actions / Comments
 			|			   |				 |				 |
-	Return	|	  1.5	   |	Not Allowed  |	 Not Allowed |
-	Time 	|	  1600	   |				 |				 |
 			|			   |				 |				 |
-			|		1	   |	Hired Till	 |	Hired Till	 |
-			|	  1600     |	1700		 |		1700	 |
+	Not		|	  1.25	   |	Not ALlowed	 |	 Not Allowed |
+	Hiring	|	   		   |				 |				 |
+	60/30 	|	  1.5	   |	Allowed		 |	 Allowed	 |
+	Min Slot|			   |				 |				 |
+			|	  1.75	   |	Not Allowed	 |	 Not Allowed |
 			|			   |				 |				 |
-			|		7	   |	Hired Till	 |	Cannot hire	 |	Fixed on second
-			|	  1000     |	1700		 |	past 1700	 |  attempt.?
 			|			   |				 |				 |
 	Cost	|		1	   |				 |				 |
 	Add		|	  1200	   |	+20			 |		+20		 |
@@ -23,6 +22,29 @@ Item Tested | Data Entered | Expected Result | Actual Result | Actions / Comment
 			|			   |				 |				 |
 			|	   5.5	   |	+112		 |		+112	 |
 			|	  1130	   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+	Return	|	  1.5	   |	Not Allowed  |	 Not Allowed |
+	Time 	|	  1600	   |				 |				 |
+			|			   |				 |				 |
+			|		1	   |	Hired Till	 |	Hired Till	 |
+			|	  1600     |	1700		 |		1700	 |
+			|			   |				 |				 |
+			|		7	   |	Hired Till	 |	Cannot hire	 |	Fixed on second
+			|	  1000     |	1700		 |	past 1700	 |  attempt.?
+			|			   |				 |				 |
+			|			   |				 |				 |
+	Hire	|		1	   |	Ok			 |		Ok		 |
+	Start/	|	  1000	   |				 |				 |
+	End 	|			   |				 |				 |
+	Time	|		1	   |	Ok			 |		Ok		 |
+			|	  1600	   |				 |				 |
+			|			   |				 |				 |
+			|	  1.5	   |	Not Ok		 |		Not OK	 |
+			|	  1600	   |				 |				 |
+			|			   |				 |				 |
+			|		1	   |	Not OK		 |		Not OK	 |
+			|	  930	   |				 |				 |
 			|			   |				 |				 |
 			|			   |				 |				 |
 			|			   |				 |				 |
