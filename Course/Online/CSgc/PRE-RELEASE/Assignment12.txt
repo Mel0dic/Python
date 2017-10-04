@@ -1,12 +1,83 @@
-1.
-	boatInfo = [[available, cost, time, start, end]]
-	dayTake = 0.00
-2.
-	Print "How Long Would You Like To Hire A Boat For?"
-	Get Input
-
-	While input not equal to 30 or 60
-		Print "Only allowed 30 or 60 minute slots"
-		Get Input
-
+boatInfo = [[available, cost, time, start, end]]
+costPerHour
 	
+Main():
+
+	dayTake = 0.00
+
+	#Call function boat length and set return value to hireLength
+	hireLength = boatLength()
+
+	#Call function costCalc with value hireLength
+	dayTake += costCalc(hireLength)
+
+
+
+#Define function boatLength to get how long you would like to hire boat for
+boatLength()
+
+	#Ask for and take input and set it equal to hireLength
+	Print "How Long Would You Like To Hire A Boat For?"
+	Get Input hireLength
+
+	#Check if input is valid if not valid ask for another input
+	if hireLength % 0.5 != 0
+		Print "You are only allowed 1 or .5 hour slots"
+		#Call function again for new input
+		boatLength()
+
+	#Return input hireLength
+	return(hireLength)
+
+
+
+#Define function costCalc to calculate the
+costCalc(hireLength)
+
+	#Get start time set it to startTime
+	Print "What time would you like to start"
+	Get Input startTime
+		
+	If hireLength % 1 == 0 and startTime % 100 == int:
+		returnTime = startTime + hireLength * 100
+	Else:
+		IF int(startTime % 100) == 30 and hireLength - hireLength != 0:
+			returnTime = (startTime - 30) + ((hireLength - 0.5) * 100) + 100
+		Else:
+			returnTime = (startTime + (hireLength * 100)) + 30
+		
+	#Check if start time is past closing time
+	If returnTime > 1700:
+		Print "You cannot hire a boat out past 17:00"
+		main()
+	Else
+		IF returnTime % 100 == 0:
+			Print "The boat must be returned by " + returnTime / 100 + ":00"
+		Else
+			IF returnTime % 100 > 60:
+				Print "The boat must be returned by " + (returnTime - 30) / 100 + 1 + ":" + returnTime % 100 - 50
+			Else:
+				Print "The boat must be returned by " + (returnTime - 30) / 100 + 1 + ":" + returnTime % 100
+
+	If startTime < 1000:
+		Print "We Only Allow You To Hire From 10am"
+		costCalc(hireLength)
+
+	#Check if hire length has half hour slots to calculate cost and add to daytake
+	If hireLength % 1 == 0
+		cost = hireLength * costPerHour
+		return cost
+	Else
+		cost = ((hireLngth - 30) * costPerHour) + 12
+		return cost
+
+
+#Define boatHire to hire out single boat from fleet of 10
+boatHire()
+	#Loop through boat array for first one available and set it to away
+	for boat in boatInfo
+		If boat[0] == False:
+			Continue
+		Else
+			boat[0] = False
+			BREAK

@@ -1,0 +1,52 @@
+Item Tested | Data Entered | Expected Result | Actual Result | Actions / Comments
+			|			   |				 |				 |
+	Return	|	  1.5	   |	Not Allowed  |	 Not Allowed |
+	Time 	|	  1600	   |				 |				 |
+			|			   |				 |				 |
+			|		1	   |	Hired Till	 |	Hired Till	 |
+			|	  1600     |	1700		 |		1700	 |
+			|			   |				 |				 |
+			|		7	   |	Hired Till	 |	Cannot hire	 |	Fixed on second
+			|	  1000     |	1700		 |	past 1700	 |  attempt.?
+			|			   |				 |				 |
+	Cost	|		1	   |				 |				 |
+	Add		|	  1200	   |	+20			 |		+20		 |
+			|			   |				 |				 |
+			|	   1.5	   |				 |				 |  -30 rather than
+			|	  1200	   |	+32			 |		-558	 |  -0.5
+			|			   |				 |				 |  
+			|	   1.5	   |	+32			 |		+32		 |
+			|	  1200	   |				 |				 |
+			|			   |				 |				 |
+			|		5	   |	+100		 |		+100	 |
+			|	  1200	   |				 |				 |
+			|			   |				 |				 |
+			|	   5.5	   |	+112		 |		+112	 |
+			|	  1130	   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
+			|			   |				 |				 |
