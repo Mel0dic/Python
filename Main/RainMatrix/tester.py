@@ -1,12 +1,15 @@
-import sys
-import time
+import sys, time, random, os
 
-row = 10
-column = 10
+row, column = os.get_terminal_size()
 
-for i in range(row):
-	for x in range(column):
-		sys.stdout.write("\r{0}>".format("="*i))
-		sys.stdout.flush()
-		time.sleep(0.1)
-	print("")
+letters = ["0", "1", " "]
+stringLine = ""
+
+for i in range(column):
+	for x in range(row):
+		stringLine += (letters[random.randint(0, 2)])
+	#stringLine += (" "*column)*row
+	sys.stdout.write("\r{0}".format(stringLine))
+	sys.stdout.flush()
+	stringLine = ""
+	time.sleep(0.1)
