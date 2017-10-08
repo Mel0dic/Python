@@ -9,7 +9,7 @@ refresh = 20
 
 letters = ["0", "1", " "]
 
-arrs = [['0'] * row] * column
+arrs = [[" "] * row] * column
 
 STRINGER = ""
 
