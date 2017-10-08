@@ -9,11 +9,13 @@ STRINGER = ""
 Numbs = ["0", "1"]
 
 class Symbol(self, x, y):
-	self.x = x
-	self.y = y
+	def __init__(self);
+		self.x = x
+		self.y = y
 
 	def setRandomSymbol(self):
-		self.value = str(0x30A0 + random.randint(0, 96))
+		self.value = chr(0x30A0 + random.randint(0, 96))
+		args[self.x, self.y] = self.value
 
 class Stream(self, x, y, maxY, fallTime):
 	def __init__(self):
