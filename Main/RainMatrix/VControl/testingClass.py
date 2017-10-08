@@ -4,6 +4,7 @@ from reprint import output
 os.system('cls' if os.name == 'nt' else 'clear')
 
 column, row = os.get_terminal_size()
+row -= 1
 
 arrs = [[" "] * column for i in range(row)]
 
@@ -23,7 +24,7 @@ class Symbol:
 	def rain(self):
 		self.column += self.speed
 
-symb = Symbol(0, 0, 1)
+symb = Symbol(0, column/2, 1)
 symb.setRandomSymbol()
 
 with output(output_type = "list", initial_len = 3, interval = 0) as outputLines:
