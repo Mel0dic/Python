@@ -9,8 +9,6 @@ os.system('cls' if os.name == 'nt' else 'clear')
 
 column, row = os.get_terminal_size()
 
-row -= 1
-
 symbolSize = 1
 
 arrs = [[" "] * column for i in range(row)]
