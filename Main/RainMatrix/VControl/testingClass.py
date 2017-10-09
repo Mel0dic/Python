@@ -4,12 +4,30 @@ from reprint import output
 os.system('cls' if os.name == 'nt' else 'clear')
 
 column, row = os.get_terminal_size()
-row -= 1
+row += 1
+column += 1
 
 arrs = [[" "] * column for i in range(row)]
 
-STRINGER = ""
-Numbs = ["0", "1"]
+def main():
+	global arrs, column, row
+
+	STRINGER = ""
+	Numbs = ["0", "1"]
+	symb = Symbol(0, column/2, 1)
+	symb.setRandomSymbol()
+
+	with output(output_type = "list", initial_len = 3, interval = 0) as outputLines:
+		while 1:
+			for i in range(row):
+				STRINGER += "".join(arrs[i])
+			symb.rain()
+			outputLines[0] = STRINGER
+			STRINGER = ""
+			time.sleep(1)	
+			#print(STRINGER)
+			#print(arrs[int(column/2)][int(row/2)])
+
 
 class Symbol:
 	def __init__(self, x, y, speed):
@@ -19,22 +37,15 @@ class Symbol:
 
 	def setRandomSymbol(self):
 		self.value = chr(0x30A0 + random.randint(0, 96))
-		arrs[self.row][self.column]= self.value
+		arrs[self.row][self.column] = self.value
 
 	def rain(self):
-		self.column += self.speed
+		self.row += self.speed
+		arrs[self.row][self.column] = self.value
 
-symb = Symbol(0, column/2, 1)
-symb.setRandomSymbol()
-
-with output(output_type = "list", initial_len = 3, interval = 0) as outputLines:
-	while 1:
-		for i in range(row):
-			STRINGER += "".join(arrs[i])
-		symb.rain()
-		outputLines[0] = STRINGER
-		STRINGER = ""
-		time.sleep(1)	
-
-#print(STRINGER)
-#print(arrs[int(column/2)][int(row/2)])
+if __name__ == "__main__":
+	try:
+		main()
+	except KeyboardInterrupt:
+		os.system('cls' if os.name == 'nt' else 'clear')
+		print("The matrix has stopped")
