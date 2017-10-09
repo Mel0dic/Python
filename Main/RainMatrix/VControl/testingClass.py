@@ -34,7 +34,7 @@ def main():
 			stream.render()
 			outputLines[0] = STRINGER
 			STRINGER = ""
-			time.sleep(0.1)	
+			#time.sleep(0.00001)	
 
 
 
