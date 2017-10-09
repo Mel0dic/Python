@@ -9,9 +9,13 @@ os.system('cls' if os.name == 'nt' else 'clear')
 
 column, row = os.get_terminal_size()
 
+row -= 1
+
 symbolSize = 1
 
 arrs = [[" "] * column for i in range(row)]
+for i in arrs:
+	i[int(row/2)] = "0"
 
 
 
@@ -47,7 +51,8 @@ class Symbol:
 
 	def setRandomSymbol(self):
 		if self.switchInterval <= 25:
-			self.value = chr(0x30A0 + random.randint(0, 96))
+			#self.value = chr(0x30A0 + random.randint(0, 96))
+			self.value = '0'
 			arrs[self.row][self.column] = self.value
 		self.symbolSwitch()
 
