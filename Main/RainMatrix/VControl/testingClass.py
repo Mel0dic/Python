@@ -65,7 +65,8 @@ class Stream:
 	def __init__(self):
 		self.symbols = []
 		self.totalSymbols = random.randint(3, 10)
-		self.speed = random.randint(1,3)
+		#self.speed = random.randint(1,3)
+		self.speed = 1
 
 	def generateSymbols(self):
 		y = column/2
