@@ -8,7 +8,6 @@ from reprint import output
 os.system('cls' if os.name == 'nt' else 'clear')
 
 column, row = os.get_terminal_size()
-row -= 1
 
 symbolSize = 1
 
@@ -34,9 +33,6 @@ def main():
 			outputLines[0] = STRINGER
 			STRINGER = ""
 			time.sleep(0.1)	
-			#print(STRINGER)
-			#print(arrs[int(column/2)][int(row/2)])
-
 
 
 
