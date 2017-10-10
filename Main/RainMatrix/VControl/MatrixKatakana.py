@@ -25,7 +25,7 @@ def main():
 	STRINGER = ""
 	Numbs = ["0", "1"]
 	x = 0
-	for i in range(column):
+	for i in range(0, column):
 		stream = Stream()
 		y = random.randint(0, row-5)
 		stream.generateSymbols(y, x)
