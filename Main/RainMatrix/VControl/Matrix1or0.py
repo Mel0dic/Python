@@ -54,9 +54,8 @@ class Symbol:
 		self.value = None
 
 	def setRandomSymbol(self):
-		if self.switchInterval <= 75:
-			self.value = str(random.randint(0, 1))
-			arrs[self.row][self.column] = self.value
+		self.value = str(random.randint(0, 1))
+		arrs[self.row][self.column] = self.value
 		self.symbolSwitch()
 
 	def rain(self):

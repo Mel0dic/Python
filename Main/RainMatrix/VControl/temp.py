@@ -12,8 +12,6 @@ column, row = os.get_terminal_size()
 symbolSize = 1
 
 arrs = [[" "] * column for i in range(row)]
-for i in arrs:
-	i[int(row/2)] = "0"
 
 
 
@@ -34,7 +32,7 @@ def main():
 			stream.render()
 			outputLines[0] = STRINGER
 			STRINGER = ""
-			#time.sleep(0.00001)	
+			time.sleep(0.1)	
 
 
 
@@ -49,8 +47,8 @@ class Symbol:
 
 	def setRandomSymbol(self):
 		if self.switchInterval <= 25:
-			#self.value = chr(0x30A0 + random.randint(0, 96))
-			self.value = '0'
+			#self.value = chr(0x30A0 + random.randint(0, 96)) ##### Problem with char size pushing lines breaks shit fuck that
+			self.value = str(random.randint(1, 0))
 			arrs[self.row][self.column] = self.value
 		self.symbolSwitch()
 
