@@ -60,7 +60,7 @@ class Symbol:
 		self.symbolSwitch()
 
 	def rain(self):
-		self.row = 0 if self.row + self.speed >= row else self.row + self.speed
+		self.row = 0 if self.row + self.speed >= row else self.row + self.speed			
 
 	def symbolSwitch(self):
 		self.switchInterval = random.randint(1, 100)
