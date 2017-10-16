@@ -4,7 +4,6 @@ from reprint import output
 
 
 
-
 os.system('cls' if os.name == 'nt' else 'clear')
 
 column, row = os.get_terminal_size()
@@ -18,12 +17,10 @@ streams = []
 
 
 
-
 def main():
 	global arrs, column, row
 
 	STRINGER = ""
-	Numbs = ["0", "1"]
 	x = 0
 	for i in range(0, column):
 		stream = Stream()
@@ -41,7 +38,6 @@ def main():
 			outputLines[0] = STRINGER
 			STRINGER = ""
 			time.sleep(0.1)
-
 
 
 
@@ -68,7 +64,6 @@ class Symbol:
 
 
 
-
 class Stream:
 	def __init__(self):
 		self.symbols = []
@@ -87,7 +82,6 @@ class Stream:
 			eachSymbol.rain()
 			arrs[eachSymbol.row][eachSymbol.column] = eachSymbol.value
 			eachSymbol.setRandomSymbol()
-
 
 
 
