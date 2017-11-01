@@ -2,12 +2,16 @@ import random
 
 bank = ["al", "en", "da", "fu", "el", "kar", "tuk", "la", "bel", "fol", "be", "wol"]
 classes = ["B", "E", "W", "D", "K"]
+classArr = []
 
 def main():
 	for i in range(10):
-		newClass = CharClass
+		newClass = CharClass()
 		newClass.nameGenerator()
-		classArr.append[newClass]
+		classArr.append(newClass)
+
+	for i in classArr:
+		i.printStats()
 	return 1
 
 class CharClass:
@@ -19,7 +23,7 @@ class CharClass:
 		tempName = ""
 		for i in range(random.randrange(3, 5)):
 			tempName += bank[random.randrange(0, len(bank))]
-		self.Name = tempName
+		self.name = tempName
 	
 	def typeGenerator(self):
 		tempClass = classes[random.randrange(0, len(classes))]
@@ -33,5 +37,9 @@ class CharClass:
 			return "Dragon", 100, 90, 40, 50
 		elif tempClass == "K":
 			return "Knight", 100, 60, 10, 60
+
+	def printStats(self):
+		print("Name: %12s, Type: %9s, Health: %i, Power: %i, SAP: %i, Speed: %i" %(self.name, self.type, self.health, self.power, self.SAP, self.speed))
+		return
 
 main()
