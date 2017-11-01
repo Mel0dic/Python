@@ -12,6 +12,35 @@ def main():
 
 	for i in classArr:
 		i.printStats()
+
+	tempYN = input("Would you like to edit or delete a charachter? (Y or N) ")
+
+	if tempYN.upper() == "Y":
+		while 1:
+			removeORadd = input("Would you like to remove or add a charachter? (del or add) ")
+
+			if removeORadd.lower() == "add":
+				newClass = CharClass()
+				newClass.nameGenerator()
+				classArr.append(newClass)
+			elif removeORadd.lower() == "del":
+				nameEditorDel = input("input the name of the charachter you would like to delete: ")
+				for i in range(len(classArr)):
+					if classArr[i].name == nameEditorDel:
+						edit = i
+						break
+				classArr.pop(i)
+
+			tempYN = input("Would you like to print out your team? (Y or N) ")
+			if tempYN.upper() == "Y":
+				for i in classArr:
+					i.printStats()
+			
+			finished = input("Are you finished editing your team? (Y or N) ")
+
+			if finished.upper() == "Y":
+				break
+
 	return 1
 
 class CharClass:
