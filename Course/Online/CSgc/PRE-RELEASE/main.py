@@ -1,9 +1,6 @@
 boatInfo = [[True, 0, 0], [True, 0, 0], [True, 0, 0], [True, 0, 0], [True, 0, 0], \
 [True, 0, 0], [True, 0, 0], [True, 0, 0], [True, 0, 0], [True, 0, 0],]
 
-#boatInfo = [[True, 0, 0], [True, 0, 0], [True, 0, 0], [True, 0, 0], [True, 0, 0], \
-#[True, 0, 0], [True, 0, 0], [True, 0, 0], [True, 0, 0], [True, 0, 0],]
-
 costPerHour = 20
 
 dayTake = 0.00
