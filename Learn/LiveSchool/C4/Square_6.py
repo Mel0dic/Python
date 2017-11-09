@@ -4,7 +4,7 @@ def main():
 			print("%2i is a prime number." % i)
 
 def isPrime(query):
-	for i in range(2, query):
+	for i in range(2, int(query/2)):
 		if query % i == 0:
 			return False
 	return True
