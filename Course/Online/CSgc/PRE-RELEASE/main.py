@@ -66,9 +66,11 @@ def costCalc(hireLength):
 			print("The boat must be returned by " + str(int(returnTime / 100)) + ":00")
 		else:
 			if returnTime % 100 > 60:
-				print("The boat must be returned by " + str(int((returnTime - 30) / 100) + 1) + ":" + str(int(returnTime % 100) - 50))
+				returnTime = ((int((returnTime - 30) / 100) + 1) * 100) + (int(returnTime % 100) - 50)
+				print("The boat must be returned by " + (str(int(returnTime/100)) + ":" + str(returnTime % 100)))
 			else:
-				print("The boat must be returned by " + str(int((returnTime - 30) / 100) + 1) + ":" + str(int(returnTime % 100)))
+				returnTime = (int((returnTime - 30) / 100) + 1) * 100 + (int(returnTime % 100))
+				print("The boat must be returned by " + (str(int(returnTime/100)) + ":" + str(returnTime % 100)))
 
 	yesOrNo = boatHire(returnTime, hireLength)
 
