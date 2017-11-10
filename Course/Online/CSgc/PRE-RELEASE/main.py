@@ -1,14 +1,18 @@
+#Inistalize and declare starting data for boatInfo [is boat in?, max hire length, time hired]
 boatInfo = [[True, 0, 0], [True, 0, 0], [True, 0, 0], [True, 0, 0], [True, 0, 0], \
 [True, 0, 0], [True, 0, 0], [True, 0, 0], [True, 0, 0], [True, 0, 0],]
 
+#The cost the boat isto hire for an hour
 costPerHour = 20
 
+#The running total of the take through the day
 dayTake = 0.00
 
 def Main():
 
 	global dayTake
 
+	#Set continue to "y" to allow for a sort of do while loop
 	continueYN = "y"
 
 	while continueYN.lower() == "y":
@@ -19,12 +23,14 @@ def Main():
 		#Call function costCalc with value hireLength
 		dayTakeTemp, continueYN = costCalc(hireLength)
 
+		#Add the cost of the ride to the running total for the day.
 		dayTake += dayTakeTemp
 
+	#DEBUG
 	for i in boatInfo:
 		print(i)
 
-#Defin function boatLength to get how long you would like to hire boat for
+#Define function boatLength to get how long you would like to hire boat for
 def boatLength():
 	#Ask for and take input and set it equal to hireLength
 	hireLength = float(input("How many hours would you like to hire a boat for? Ex 1.5:  "))
@@ -42,15 +48,21 @@ def costCalc(hireLength):
 	#Get start time set it to startTime
 	startTime = int(input("What time would you like to start? Ex 1230:  "))
 
+	#Check if start time is < 10:00 if it is call itself to input a new time
 	if startTime < 1000:
 		print("We only allow you to hire from 10am")
 		return costCalc(hireLength)
 
+	#if start time has a .5 hour slot and if startTime % 100 is an int
 	if hireLength % 1 == 0 and isinstance(startTime % 100, int):
+		#Add hireLength x 100 to startTime set as returnTime
 		returnTime = startTime + hireLength * 100
 	else:
+		#If start time starts at half past and hire length is half hour
 		if int(startTime % 100) == 30 and hireLength - int(hireLength) != 0:
+			#
 			returnTime = (startTime - 30) + ((hireLength - 0.5) * 100) + 100
+		#Else if start time is on the hour or hire length is either an hour or half hour
 		else:
 			returnTime = (startTime + (hireLength * 100)) + 30
 
@@ -59,10 +71,13 @@ def costCalc(hireLength):
 		print("You cannot hire a boat past 17:00")
 		Main()
 	else:
+		#If return time is not on a half hour slot
 		if returnTime % 100 == 0:
 			print("The boat must be returned by " + str(int(returnTime / 100)) + ":00")
 		else:
+			#if return time is greater than 60
 			if returnTime % 100 > 60:
+				#return time = (returnTime - 30 / 100) + 1 * 100 + returnTime % 100 - 50
 				returnTime = ((int((returnTime - 30) / 100) + 1) * 100) + (int(returnTime % 100) - 50)
 				print("The boat must be returned by " + (str(int(returnTime/100)) + ":" + str(returnTime % 100)))
 			else:
