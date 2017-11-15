@@ -1,7 +1,7 @@
 import winsound, random, time
 
-frequency = 2000  # Set Frequency To 2000 Hertz
-duration = 100  # Set Duration To 100 ms == .1 second
+frequency = 1500  # Set Frequency To 1500 Hertz
+duration = 50  # Set Duration To 100 ms == .1 second
 
 x = ""
 
@@ -17,16 +17,14 @@ while 1:
 	#Sleep the program for a random time between 2 and 10 seconds
 	time.sleep(random.randrange(2, 10))
 
-	#Beep for .1 seconds at 2000 Hertz	
+	#Beep for .1 seconds at 1500 Hertz	
 	winsound.Beep(frequency, duration)
 	#Record time
 	startTime = time.time()
 	#Wait for an input
 	x = str(input("GO: "))
-	#Record time after input
-	endTime = time.time()
-	#Taks the second time from the second time and print the difference	
-	print(endTime - startTime)
+	#Taks the start time from the cureent time and print the difference	
+	print("Your time was: {}".format(time.time() - startTime))
 
 	#If the input was not just enter break out of the loop
 	if x != "":

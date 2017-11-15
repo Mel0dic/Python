@@ -2,7 +2,16 @@ import random
 
 numbers = []
 
-for i in range(0, random.randrange(1, 5)):
-	numbers.append(int(input("Enter a number: ")))
+while 1:
+	numbers.append(int(input("Enter a number or -1 to stop: ")))
+	if numbers[len(numbers)-1] == -1:
+		numbers.pop(len(numbers)-1)
+		break
 
-numbers.sort()
+total = 0
+for i in numbers:
+	total = total + i
+
+print(total)
+print(total/len(numbers))
+print(max(numbers) - min(numbers))
