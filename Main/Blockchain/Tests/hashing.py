@@ -14,14 +14,6 @@ class Block:
 
 
 
-
-
-
-
-
-
-
-
 genesisTransaction = ["satoshi sent 10 bitcoin", "someone sent 10 bitcoin"]
 
 myBlock = Block("0", genesisTransaction)
