@@ -6,13 +6,13 @@ def main():
 #Define LinearSearch with argument that is being searched for
 def LinearSearch(find):
 	#Create countriesEU array filled with 12 countries from eu		
-	countriesEu = ["Great Britain", "France", "Iceland", "Ireland", "Italy", "San Marino", "Serbia", "Slovakia", "Spain", "Sweden", "Switzerland", "Germany"]
+	countriesEu = ["Great Britain", "France", "Iceland", "Ireland", "Spain", "Poland", "Portugal", "Slovakia", "Italy", "Sweden", "Switzerland", "Germany"]
 	#For every element in countriesEu	
-	for i in countriesEu:
+	for i in range(0, len(countriesEu)):
 		#If element is == to the one being looked for
-		if i == find:
+		if countriesEu[i] == find:
 			#Print found message and return out of function	
-			print("Found {} at point {}.".format(i, i))
+			print("Found {} at point {}.".format(countriesEu[i], i))
 			return
 	#If its been through every element and can't find the one being looked for print could not be found message
 	print("{} could not be found.".format(find))
