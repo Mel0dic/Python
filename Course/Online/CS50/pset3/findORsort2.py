@@ -34,7 +34,7 @@ def search(target, values, n):
 	return False
 
 
-#Bubble Sort
+#Sort 
 #Define a number sorting algorithm with array of values and n length of array or use .sort
 #you know who cares
 def sort(values, n):

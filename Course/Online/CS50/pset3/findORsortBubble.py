@@ -37,8 +37,12 @@ def search(target, values, n):
 #Define a number sorting algorithm with array of values and n length of array or use .sort
 #you know who cares
 def sort(values, n):
+	#Set is sorted to false
+	isSorted = False
 	#For i in range 0 to length of array + 1
-	for i in range(0, n+1):
+	while not isSorted:
+		#Set isSorted to true
+		isSorted = True
 		#For j in range 0 to length of array
 		for j in range(1, n):
 			#If value at values[j] < value at values[j-1]
@@ -49,7 +53,9 @@ def sort(values, n):
 				values[j] = values[j-1]
 				#Set value at values[j] to value at values[j-1]
 				values[j-1] = holder
-	print(values)
+				#set isSorted = False
+				isSorted = False
+			print(values)
 	return values
 
 if __name__ == "__main__":
