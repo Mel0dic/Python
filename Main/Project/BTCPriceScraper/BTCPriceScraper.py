@@ -8,5 +8,5 @@ soup = bs4.BeautifulSoup(htmldoc, 'html.parser')
 
 #print(soup.prettify())
 
-print(soup.find_all("span", class_="text-large"))
+print(soup.find_all("span", class_="text-large2"))
 #price = tree.xpath('//span[@id="quote_price"]/text()')
