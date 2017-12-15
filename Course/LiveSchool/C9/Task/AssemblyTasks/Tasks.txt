@@ -1,0 +1,5 @@
+Input and compares two numbers, then outputs 1 if they are the same of 0 if they are different (4 marks) -----------
+Input a number.  The program then loops from that number down to zero, in iterations of 1. (e.g if five is input, the program would output  5,4,3,2,1,0) (6 marks)
+
+Take screen prints of each program and copy the LMC code in to a single document.  Save the file as a PDF and upload for marking.
+Remember to included comments in the code, the task number and your name at the start of the document.

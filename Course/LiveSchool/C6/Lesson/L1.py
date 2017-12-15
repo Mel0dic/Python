@@ -1,19 +1,11 @@
 def main():
 	#Ask for input set given country find
 	find = input("Enter a country: ")
-	LinierSearch(find)
+	LinearSearch(find)
 
-# def LinierSearch(find):
-# 	countriesEu = ["Great Britain", "France", "Iceland", "Ireland", "Italy", "San Marino", "Serbia", "Slovakia", "Spain", "Sweden", "Switzerland", "Germany"]
-# 	pointer = 0 
-# 	while pointer < len(countriesEu) and countriesEu[pointer] != find:
-# 		pointer += 1
-# 		if countriesEu[pointer] == find:
-# 			print("Found {} at point {}.".format(find, (pointer + 1)))
-# 	print("{} could not be found.".format(find))
 
-#Define LinierSearch with argument that is being searched for
-def LinierSearch(find):
+#Define LinearSearch with argument that is being searched for
+def LinearSearch(find):
 	#Create countriesEU array filled with 12 countries from eu		
 	countriesEu = ["Great Britain", "France", "Iceland", "Ireland", "Italy", "San Marino", "Serbia", "Slovakia", "Spain", "Sweden", "Switzerland", "Germany"]
 	#For every element in countriesEu	

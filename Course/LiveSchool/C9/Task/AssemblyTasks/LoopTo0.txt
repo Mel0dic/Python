@@ -1,0 +1,10 @@
+        INP
+        STA Num1
+Loop    BRZ Same
+        OUT Num1
+        SUB One
+        BRA Loop
+Same    OUT Num1
+        HLT
+One     DAT 1
+Num1    DAT

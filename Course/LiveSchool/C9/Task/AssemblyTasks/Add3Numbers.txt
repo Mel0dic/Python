@@ -1,0 +1,9 @@
+        INP
+        STA NumHold
+        INP
+        ADD NumHold
+        STA NumHold
+        INP
+        ADD NumHold
+        OUT
+NumHold DAT

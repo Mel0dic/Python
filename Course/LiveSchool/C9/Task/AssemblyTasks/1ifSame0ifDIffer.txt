@@ -1,0 +1,14 @@
+        INP
+        STA Num1
+        INP
+        Sub Num1
+        BRZ Same
+        LDA Zero
+        OUT Zero
+        HLT
+Same    LDA One
+        OUT One
+        HLT
+Zero    DAT 0
+One     DAT 1
+Num1    DAT

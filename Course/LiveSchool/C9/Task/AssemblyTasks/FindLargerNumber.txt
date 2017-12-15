@@ -1,0 +1,15 @@
+		INP
+		STA Num1
+		INP
+		STA Num2
+		LDA Num1
+		SUB Num2
+		BRP N1IsG
+		LDA Num2
+		OUT
+		HLT
+N1IsG	LDA Num1
+		OUT
+		HLT
+Num1	DAT
+Num2	DAT

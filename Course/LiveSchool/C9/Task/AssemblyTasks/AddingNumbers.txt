@@ -1,0 +1,6 @@
+        INP
+        STA Num1
+        INP
+        ADD Num1
+        OUT
+Num1    DAT

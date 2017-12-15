@@ -1,0 +1,9 @@
+        INP
+        STA 1stNum
+        INP
+        STA 2ndNum
+        LDA 1stNum
+        SUB 2ndNum
+        OUT
+1stNum  DAT
+2ndNum  DAT
