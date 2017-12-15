@@ -1,9 +1,18 @@
+        //Input 1st Number
         INP
+        //Store value in 1stNum
         STA 1stNum
+        //Input 2nd Number
         INP
+        //Store value in 2ndNum
         STA 2ndNum
+        //Load 1st Num
         LDA 1stNum
+        //Subtract the 2ndNun
         SUB 2ndNum
+        //Output result
         OUT
+        //Create vaiable 1stNum
 1stNum  DAT
+        //Create vaiable 2ndNum
 2ndNum  DAT

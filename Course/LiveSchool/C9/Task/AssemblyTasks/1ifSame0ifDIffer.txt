@@ -1,14 +1,28 @@
+        //Input first number
         INP
+        //Store input in Num1
         STA Num1
+        //Input Second number
         INP
+        //Subtract Num1 from current value
         Sub Num1
+        //If result is zero goto same
         BRZ Same
+        //Load Zero
         LDA Zero
-        OUT Zero
+        //OUT Zero
+        OUT
+        //Stop program
         HLT
+        //Load One
 Same    LDA One
-        OUT One
+        //Out One
+        OUT
+        //Stop program
         HLT
+        //Set zero to value 0
 Zero    DAT 0
+        //Set one to value 1
 One     DAT 1
+        //Create variable Num1
 Num1    DAT

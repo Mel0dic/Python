@@ -1,10 +1,18 @@
+       	//Input Number
         INP
+        //Store in Num1
         STA Num1
+        //If Value = 0 goto same
 Loop    BRZ Same
-        OUT Num1
+		//Output number
+        OUT
+        //Subtract one from number
         SUB One
+        //Go back to point loop always
         BRA Loop
+        //Output number
 Same    OUT Num1
-        HLT
+		//Set One to value 1
 One     DAT 1
+		//Create varibale Num1
 Num1    DAT

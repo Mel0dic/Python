@@ -1,9 +1,18 @@
+        //Input the first number
         INP
+        //Store Number in NumHold
         STA NumHold
+        //Input the second number
         INP
+        //Add the Second Number to the value in numhold
         ADD NumHold
+        //Store value in NumHold
         STA NumHold
+        //Input the thrid number
         INP
+        //Add 3rd number to value in numhold
         ADD NumHold
+        //Output current number
         OUT
+        //Create a variable called NumHold
 NumHold DAT

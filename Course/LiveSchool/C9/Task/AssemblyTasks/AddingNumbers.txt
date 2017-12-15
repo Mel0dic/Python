@@ -1,6 +1,12 @@
+        //Input First number
         INP
+        //Store first number in Num1
         STA Num1
+        //Input Second Number
         INP
+        //Add the first number to the second
         ADD Num1
+        //Output the result
         OUT
+        //Create a variable called Num1
 Num1    DAT
