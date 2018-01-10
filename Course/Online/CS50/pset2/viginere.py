@@ -55,6 +55,9 @@ def viginere(keyword):
 			#Append the key array with the asccii number for the char
 			key.append(ord(keyword[i]))
 
+	print(ctexta)
+	print(key)
+
 	#For i in range(0, length of cypher text array(ctexta))
 	for i in range(0, len(ctexta)):
 		#If letter is lower case
@@ -62,6 +65,7 @@ def viginere(keyword):
 			#print out the char version of the number worked out by...
 			#getting the ascii number of letter - 97(the ascii of 'a') + the key number then % 26 to make sure we are still a letter between (0, 26) then add ascii num of 'a'
 			print(chr((((ord(ctexta[i]) - 97)+key[counts])% 26)+97), end = '')
+			#print(ctexta[i] + " " + str(key[counts]))
 			#Add 1 to counts
 			counts += 1
 		#If letter is upper case

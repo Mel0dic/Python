@@ -1,6 +1,0 @@
--Message Pops or beep at random time
--Time counter starts press button to stop counter
--Countdown before starts then random time
--Countdown between three - six seconds
--Repeat program without input
--Have secondary input to cancel program

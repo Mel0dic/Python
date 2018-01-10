@@ -1,2 +1,0 @@
-def generateName
-	FOR number IN RANGE(3  -  5):
