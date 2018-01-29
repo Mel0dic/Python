@@ -5,6 +5,10 @@ from pprint import pprint
 
 nameData = {}
 
+
+
+
+
 def main():
 	data = json.load(open('ratrings.json'))
 
@@ -13,7 +17,12 @@ def main():
 		nameData[something["name"]].pop("timestamp")
 		nameData[something["name"]].pop("name")
 
-	euclideanDistance("Unicorn", "This Dot")
+	#euclideanDistance("Alca", "Unicorn")
+	pprint(findNearestNeighbours("Alca"))
+
+
+
+
 
 
 def euclideanDistance(name1, name2):
@@ -35,7 +44,40 @@ def euclideanDistance(name1, name2):
 
 	similarity = 1/(1 + sqRoot)
 
-	print(similarity)
+	return(similarity)
+
+
+
+
+
+def findNearestNeighbours(name):
+	
+	similarityScores = {}
+
+	for i in nameData:
+		other = i
+		if name != other:
+			similarity = euclideanDistance(name, other)
+			similarityScores[other] = similarity
+		else:
+			similarityScores[other] = -1
+
+	return similarityScores
+
+
+
+
+
+def compareSimilarity(a, b):
+	score1 = similarityScores[a.name]
+	score2 = similarityScores[b.name]
+
+	return score2 - score1
+
+
+
+
+
 
 if __name__ == "__main__":
 	main()
