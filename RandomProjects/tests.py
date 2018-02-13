@@ -1,6 +1,10 @@
-from time import time
-import random, os
+import urllib2
+url = "http://127.0.0.1:8082"
 
-print(time())
-print(chr(0x30A0 + 10))
-print(os.get_terminal_size())
+for i in range(5500, 5601):
+	request = urllib2.request(url, headers=str(i))
+	try:
+		contents = urllib2.urlopen(request).read()
+		print(contents)
+	except:
+		print(url)
