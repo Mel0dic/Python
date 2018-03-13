@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-print((1/2) * 0.8 * ((1/(1^2)) + ( 2 * ( (1/(1.8^2)) + (1/(2.6^2)) + (1/(3.4^2)) + (1/(4.2^2)) ) ) + (1/25) ))
-=======
 from zipfile import ZipFile
 
 for i in range(100, 1000):
@@ -62,4 +60,15 @@ s.close
 import magic
 
 
->>>>>>> a75b423a789e93b934a368193b1cf255a3254f63
+=======
+import urllib2
+url = "http://127.0.0.1:8082"
+
+for i in range(5500, 5601):
+	request = urllib2.request(url, headers=str(i))
+	try:
+		contents = urllib2.urlopen(request).read()
+		print(contents)
+	except:
+		print(url)
+>>>>>>> 185f867bc3e61a87cba5014423ad908b6a5bf50b
