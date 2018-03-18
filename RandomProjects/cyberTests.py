@@ -71,4 +71,43 @@ for i in range(5500, 5601):
 		print(contents)
 	except:
 		print(url)
->>>>>>> 185f867bc3e61a87cba5014423ad908b6a5bf50b
+
+
+
+from zipfile import ZipFile
+
+for pwd in range(0, 999):
+	try:
+		mainZF = zipfile("/tmp/alien-zip-2092.zip", "r")
+		mainZF.open("alien-zip-2092", "r")
+		print pwd
+		exit()
+	except IOError:
+		print "Error"
+
+from zipfile import ZipFile
+
+for i in range(0, 1000):
+	try:
+		with ZipFile("/tmp/alien-zip-2092.zip") as zf:
+			zf.extractall(path="/tmp",pwd=str(i))
+			with open("/tmp/alien-zip-2092.txt", "r") as textFile:
+				for line in textFile:
+					print line
+			print i
+			exit()
+	except RuntimeError:
+		zf.close()
+
+
+
+
+import urllib2
+url = "http://127.0.0.1:8082"
+
+#request = urllib2.open(url)
+
+reque = urllib2.Request(url, "GET /")
+
+r2 = urllib2.urlopen(reque)
+print r2.read()
