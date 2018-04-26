@@ -78,7 +78,7 @@ for row in range(7):
 #initially, we want to print the message just off the display.
 offset = WIDTH
 while True:
-    os.system("clear")
+    os.system('cls' if os.name == 'nt' else 'clear')
     #print each line of the message, including the offset.
     for row in range(7):
         print(" " * offset + printedMessage[row][max(0,offset*-1):WIDTH - offset])
