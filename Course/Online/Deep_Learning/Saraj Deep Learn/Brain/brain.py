@@ -13,5 +13,9 @@ body_reg.fit(x_values, y_values)
 
 #visualize results
 plt.scatter(x_values, y_values)
+print(body_reg.predict([[6.3654], [13.176]]))
 plt.plot(x_values, body_reg.predict(x_values))
+plt.show()
+
+plt.scatter(x_values, y_values)
 plt.show()
