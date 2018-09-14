@@ -5,7 +5,7 @@ import tensorflow as tf #Google tensorflow
 
 #Step 1 - load data
 # Read the data as a dataframe object
-dataframe = pd.read_csv('/home/ben/Documents/Python/Saraj Deep Learn/Live_Demo/2/data.csv')
+dataframe = pd.read_csv('./data.csv')
 #Use drop to get rid of unused columns. Only uising the first axis in the data set
 dataframe = dataframe.drop(['index', 'price', 'sq_price'], axis=1)
 #We only want the first 10 rows of the data set
@@ -26,9 +26,9 @@ dataframe.loc[:, ('y2')] = dataframe['y2'].astype(int)
 #list of list of lists of numbers (3D tensor)
 #...
 #Convert features to input tensor
-inputX = dataframe.loc[:, ['area', 'bathrooms']].as_matrix()
+inputX = dataframe.loc[:, ['area', 'bathrooms']].values
 #convert labels to input tensors
-inputY = dataframe.loc[:, ['y1', 'y2']].as_matrix()
+inputY = dataframe.loc[:, ['y1', 'y2']].values
 
 #Step 4 - Write out our hyperparameters
 learning_rate = 0.000001
