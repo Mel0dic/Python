@@ -1,3 +1,6 @@
+#conda env = maching_learn_tf
+#conda activate machine_learn_tf
+
 import pandas as pd #Pandas used to work with data as tables
 import numpy as np #Help using number matrices
 import matplotlib.pyplot as plt #To print the data on a graph or table
